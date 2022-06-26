@@ -25,21 +25,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rectangleView.layer.cornerRadius = 10
+        setRectangleViewColor()
     }
     
     // MARK: IB Actions
     @IBAction func changeRedColor() {
-        redValueLabel.text = "\(redSlider.value)"
+        redValueLabel.text = "\(round(redSlider.value * 1000) / 1000)"
         setRectangleViewColor()
     }
     
     @IBAction func changeGreenColor() {
-        greenValueLabel.text = "\(greenSlider.value)"
+        greenValueLabel.text = "\(round(greenSlider.value * 1000) / 1000)"
         setRectangleViewColor()
     }
     
     @IBAction func changeBlueColor() {
-        blueValueLabel.text = "\(blueSlider.value)"
+        blueValueLabel.text = "\(round(blueSlider.value * 1000) / 1000)"
         setRectangleViewColor()
     }
     
