@@ -58,16 +58,48 @@
 		CE0244F928687E4A005104CB /* ChangeColorWithSliders */ = {
 			isa = PBXGroup;
 			children = (
-				CE0244FA28687E4A005104CB /* AppDelegate.swift */,
-				CE0244FC28687E4A005104CB /* SceneDelegate.swift */,
-				CE0244FE28687E4A005104CB /* SettingsViewController.swift */,
-				CE7127D6287F2BA200A6E097 /* StartViewController.swift */,
-				CE02450028687E4A005104CB /* Main.storyboard */,
-				CE02450328687E4C005104CB /* Assets.xcassets */,
-				CE02450528687E4C005104CB /* LaunchScreen.storyboard */,
-				CE02450828687E4C005104CB /* Info.plist */,
+				CE7127D9287F57F700A6E097 /* ViewControllers */,
+				CE7127DA287F581800A6E097 /* StoryBoards */,
+				CE7127DC287F583A00A6E097 /* App */,
+				CE7127DB287F582D00A6E097 /* Resources */,
 			);
 			path = ChangeColorWithSliders;
+			sourceTree = "<group>";
+		};
+		CE7127D9287F57F700A6E097 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE0244FE28687E4A005104CB /* SettingsViewController.swift */,
+				CE7127D6287F2BA200A6E097 /* StartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE7127DA287F581800A6E097 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				CE02450028687E4A005104CB /* Main.storyboard */,
+				CE02450528687E4C005104CB /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		CE7127DB287F582D00A6E097 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE02450328687E4C005104CB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE7127DC287F583A00A6E097 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE0244FA28687E4A005104CB /* AppDelegate.swift */,
+				CE0244FC28687E4A005104CB /* SceneDelegate.swift */,
+				CE02450828687E4C005104CB /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

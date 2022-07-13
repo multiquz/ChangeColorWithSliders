@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    // MARK: IB Outlets
+    // MARK: - IB Outlets
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redValueLabel: UILabel!
@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     var lastBackgroundColor: UIColor!
     var delegate: SettingsViewControllerDelegate!
     
-    // MARK: Override Methods
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
         
@@ -85,6 +85,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
+// MARK: - UIColor
 extension UIColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
