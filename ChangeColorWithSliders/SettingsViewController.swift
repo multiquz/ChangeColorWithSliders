@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
     
     // MARK: IB Outlets
     @IBOutlet var colorView: UIView!
@@ -20,11 +20,13 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    var lastBackgroundColor: UIColor!
     
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
+        setSliderValues()
         setColor()
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
     }
@@ -43,7 +45,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func doneButtonPressed() {
+        dismiss(animated: true)
+    }
+    
     // MARK: Private Methods
+    private func setSliderValues() {
+        redSlider.value = Float(CIColor(color: lastBackgroundColor).red)
+        greenSlider.value = Float(CIColor(color: lastBackgroundColor).green)
+        blueSlider.value = Float(CIColor(color: lastBackgroundColor).blue)
+    }
+    
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
