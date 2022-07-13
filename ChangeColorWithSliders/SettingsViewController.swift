@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     var lastBackgroundColor: UIColor!
+    var delegate: SettingsViewControllerDelegate!
     
     // MARK: Override Methods
     override func viewDidLoad() {
@@ -47,13 +48,14 @@ class SettingsViewController: UIViewController {
     
     @IBAction func doneButtonPressed() {
         dismiss(animated: true)
+        delegate.setUpColor(backgroundColor: colorView.backgroundColor ?? lastBackgroundColor)
     }
     
     // MARK: Private Methods
     private func setSliderValues() {
-        redSlider.value = Float(CIColor(color: lastBackgroundColor).red)
-        greenSlider.value = Float(CIColor(color: lastBackgroundColor).green)
-        blueSlider.value = Float(CIColor(color: lastBackgroundColor).blue)
+        redSlider.value = Float(lastBackgroundColor.rgba.red)
+        greenSlider.value = Float(lastBackgroundColor.rgba.green)
+        blueSlider.value = Float(lastBackgroundColor.rgba.blue)
     }
     
     private func setColor() {
@@ -80,5 +82,17 @@ class SettingsViewController: UIViewController {
     
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
+    }
+}
+
+extension UIColor {
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        return (red, green, blue, alpha)
     }
 }
