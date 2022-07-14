@@ -53,15 +53,11 @@ class SettingsViewController: UIViewController {
     
     // MARK: Private Methods
     private func setSliderValues() {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        lastBackgroundColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
-        redSlider.value = Float(red)
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
+        let ciColor = CIColor(color: lastBackgroundColor)
+
+        redSlider.value = Float(ciColor.red)
+        greenSlider.value = Float(ciColor.green)
+        blueSlider.value = Float(ciColor.blue)
     }
     
     private func setColor() {
